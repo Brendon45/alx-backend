@@ -70,6 +70,12 @@ Page numbers are 1-indexed, i.e. the first page is page 1.
     (30, 45)
     bob@dylan:~$
 
+__Repo:__
+
+    GitHub repository: alx-backend
+    Directory: 0x00-pagination
+    File: 0-simple_helper_function.py
+
 ## 1. Simple pagination
 
 Copy `index_range` from the previous task and the following class into your code
@@ -163,6 +169,12 @@ Implement a method named `get_page` that takes two integer arguments `page` with
         []
         bob@dylan:~$
 
+__Repo:__
+
+    GitHub repository: alx-backend
+    Directory: 0x00-pagination
+    File: 1-simple_pagination.py
+
 ## 2. Hypermedia pagination
 
 Replicate code from the previous task.
@@ -208,6 +220,12 @@ You can use the `math` module if necessary.
     ---
     {'page_size': 0, 'page': 3000, 'data': [], 'next_page': None, 'prev_page': 2999, 'total_pages': 195}
     bob@dylan:~$
+
+__Repo:__
+
+    GitHub repository: alx-backend
+    Directory: 0x00-pagination
+    File: 2-hypermedia_pagination.py
 
 ## 3. Deletion-resilient hypermedia pagination
 
@@ -323,3 +341,8 @@ The method should return a dictionary with the following key-value pairs:
         {'index': 5, 'data': [['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Mia', '79', '5'], ['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Charlotte', '59', '6']], 'page_size': 2, 'next_index': 7}
         bob@dylan:~$
 
+__Repo:__
+
+    GitHub repository: alx-backend
+    Directory: 0x00-pagination
+    File: 3-hypermedia_del_pagination.py
