@@ -1,0 +1,14 @@
+# 0x00. Pagination
+
+## Back-end
+
+![PAGNATION](https://private-user-images.githubusercontent.com/125453474/299567379-ceac1a32-0cbb-4e21-be44-0193f967c3fe.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjEyOTcyNzQsIm5iZiI6MTcyMTI5Njk3NCwicGF0aCI6Ii8xMjU0NTM0NzQvMjk5NTY3Mzc5LWNlYWMxYTMyLTBjYmItNGUyMS1iZTQ0LTAxOTNmOTY3YzNmZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzE4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDcxOFQxMDAyNTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMGY1Mzg0ODRkZmY0YzgzODM0Y2JjOGM4NWZmOGRiOWRiYTBjODJlNWRhZGU3YjYwZjk0ZDFiZjI5NmRmYmRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.MsM0_FLFhzlCaL8tnJtk8CAqfbGyi1ynxJPVG3L_O3s)
+
+## Resources
+
+__Read or watch:__
+
+    - [REST API Design: Pagination](https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/#pagination)
+    - [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS)
+
+## Learning Objectives
