@@ -4,7 +4,7 @@
 
 Welcome to the ALX Backend repository! This repository contains various backend projects and exercises completed as part of the ALX Software Engineering program. The projects cover a wide range of backend technologies and concepts, from databases to APIs and more. Done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [Brendon Jeje](https://x.com/brendon4545).
 
-                                ## TABLE OF CONTENT 📖
+## TABLE OF CONTENT 📖
 1. __0x00-pagination:__  How to `paginate`: a dataset with simple page and page_size parameters, a dataset with hypermedia metadata, in a deletion-resilient manner.
 
 ## Access
