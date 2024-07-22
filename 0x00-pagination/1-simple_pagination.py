@@ -53,8 +53,8 @@ class Server:
         Returns:
             List[List]: A list of rows representing the page of data.
         """
-        assert isinstance(page, int) and page > 0,
-        assert isinstance(page_size, int) and page_size > 0,
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
         self.dataset()
 
