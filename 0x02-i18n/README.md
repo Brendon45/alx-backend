@@ -126,6 +126,12 @@ Visiting `http://127.0.0.1:5000/?locale=fr` __should display this level 1 headin
 
 ![MONDE](https://private-user-images.githubusercontent.com/125453474/302606307-3940de33-ce26-4575-9c48-1726b47c64fa.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjA2MzA3LTM5NDBkZTMzLWNlMjYtNDU3NS05YzQ4LTE3MjZiNDdjNjRmYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMTUxZWVmNzM5MmMzMjE4OWJmZmI5OWJkNGU4NzE5YmExMDc5NWNiMmYwNGM1ZWVmYTM2MWE2M2YxNDc2YmE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.n8nkzSE6f_PIsiveGVb3R1Y0X_WnQQwlVSoIwrCsBTc)
 
+__Repo:__
+
+  - GitHub repository: `alx-backend`
+  - Directory: `0x02-i18n`
+  - File: `4-app.py, templates/4-index.html`
+
 ## 5. Mock logging in
 
 Creating a user login system is outside the scope of this project. To emulate a similar behavior, copy the following user table in `5-app.py`.
@@ -157,4 +163,74 @@ Visiting `http://127.0.0.1:5000/` in your browser should display this:
 Visiting `http://127.0.0.1:5000/?login_as=2` in your browser should display this:
 
 ![HELLO](https://private-user-images.githubusercontent.com/125453474/302607652-90f601c3-2113-4992-be40-b6d21d4846f7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjA3NjUyLTkwZjYwMWMzLTIxMTMtNDk5Mi1iZTQwLWI2ZDIxZDQ4NDZmNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYjUwNzFhOTc3NDNjZDZlZmViN2VlZmNmNWY4MTVmMTBkOGU0YjhlMjk3MTk0NDQzMDVhNjFjOTc3MDA3ZjdmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.bPFSL9sxRHaaI7S2-OX3JF71Bo3YSv2G_vfRlY6MwRI)
+
+__Repo:__
+
+  - GitHub repository: `alx-backend`
+  - Directory: `0x02-i18n`
+  - File: `5-app.py, templates/5-index.html`
+
+## 6. Use user locale
+
+Change your `get_locale` function to use a user’s preferred local if it is supported.
+
+The order of priority should be
+
+  1. Locale from URL parameters
+  2. Locale from user settings
+  3. Locale from request header
+  4. Default locale
+Test by logging in as different users
+
+![BONJOUR](https://private-user-images.githubusercontent.com/125453474/302608813-fc5ddb6f-d9ba-4cec-9453-528921ea8e6f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjA4ODEzLWZjNWRkYjZmLWQ5YmEtNGNlYy05NDUzLTUyODkyMWVhOGU2Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZWQ0YjY1Mjc2NjljOWQ2M2JlNGRkMmU3ZjdjMjY0YTQ2MTkyZDljODQ0NjExNzhiNGZmZjBmMDFhY2UyYzVkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.3fnEkZYhHJRYYMO95RPgwuiPMlfwojpOaMVJq8nBWp4)
+
+__Repo:__
+
+  - GitHub repository: `alx-backend`
+  - Directory: `0x02-i18n`
+  - File: `6-app.py, templates/6-index.html`
+
+## 7. Infer appropriate time zone
+
+Define a `get_timezone` function and use the `babel.timezoneselector decorator`.
+
+The logic should be the same as `get_locale`:
+
+  1. Find timezone parameter in URL parameters
+  2. Find time zone from user settings
+  3. Default to UTC
+
+Before returning a URL-provided or user time zone, you must validate that it is a valid time zone. To that, use `pytz.timezone` and catch the `pytz.exceptions.UnknownTimeZoneError` exception.
+
+__Repo:__
+
+  - GitHub repository: `alx-backend`
+  - Directory: `0x02-i18n`
+  - File: `7-app.py, templates/7-index.html`
+
+## 8. Display the current time
+
+Based on the inferred time zone, display the current time on the home page in the default format. For example:
+
+`Jan 21, 2020, 5:55:39 AM or 21 janv. 2020 à 05:56:28`
+
+Use the following translations
+
+| msgid            | English                                  | French                               |
+|------------------|------------------------------------------|--------------------------------------|
+| current_time_is  | "The current time is %(current_time)s."  | "Nous sommes le %(current_time)s."   |
+
+__Displaying the time in French looks like this:__
+
+![BONJOUR](https://private-user-images.githubusercontent.com/125453474/302610060-747a00db-4735-4bb3-98dc-bc7791d25771.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjEwMDYwLTc0N2EwMGRiLTQ3MzUtNGJiMy05OGRjLWJjNzc5MWQyNTc3MS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lZDUyMDM1MDlmMzA2ZDQ5MzExNjA3MzdmNTIwYjgxMzBkNzAwYzVkNTMyY2RlZDdmNTI4NGY2NTg0OGZiOTVkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9._WiG5IwUl7nMl46uX6rd70sz_S9jp5gfpf04LLwS9B8)
+
+__Displaying the time in English looks like this:__
+
+![SPOCK](https://private-user-images.githubusercontent.com/125453474/302610167-f2ba10d3-81f8-4da3-9b34-66bb71e2b0f9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjEwMTY3LWYyYmExMGQzLTgxZjgtNGRhMy05YjM0LTY2YmI3MWUyYjBmOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMDdjNzBiZGMwYmZmMjI3YjM2NjMzMGMzYjAyYTBlMjQyODEwODc5MWE3Yjc2OWU3ZGIxZjI2MGE1MDRlOTlmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.7ihk1Mp7rVdtSO7LlrwMfs362-tJhDL1d_ngDH-HD-A)
+
+__Repo:__
+
+  - GitHub repository: `alx-backend`
+  - Directory: `0x02-i18n`
+  - File: `app.py, templates/index.html, translations/en/LC_MESSAGES/messages.po, translations/fr/LC_MESSAGES/messages.po`
 
