@@ -101,5 +101,60 @@ Then edit files `translations/[en|fr]/LC_MESSAGES/messages.po` to provide the co
 |-------------|-------------------------|----------------------------|
 | home_title  | "Welcome to Holberton"  | "Bienvenue chez Holberton" |
 | home_header | "Hello world!"          | "Bonjour monde!"   
-  |
+
+Then compile your dictionaries with
+
+    $ pybabel compile -d translations
+
+Reload the home page of your app and make sure that the correct messages show up.
+
+__Repo:__
+
+  - GitHub repository: `alx-backend`
+  - Directory:` 0x02-i18n`
+  - File: `3-app.py, babel.cfg, templates/3-index.html, translations/en/LC_MESSAGES/messages.po, translations/fr/LC_MESSAGES/messages.po, translations/en/LC_MESSAGES/messages.mo, translations/fr/LC_MESSAGES/messages.mo`
+
+## 4. Force locale with URL parameter
+
+In this task, you will implement a way to force a particular locale by passing the `locale=fr` parameter to your app’s URLs.
+
+In your `get_locale` function, detect if the incoming request contains `locale` argument and ifs value is a supported locale, return it. If not or if the parameter is not present, resort to the previous default behavior.
+
+Now you should be able to test different translations by visiting `http://127.0.0.1:5000?locale=[fr|en]`.
+
+Visiting `http://127.0.0.1:5000/?locale=fr` __should display this level 1 heading:__
+
+![MONDE](https://private-user-images.githubusercontent.com/125453474/302606307-3940de33-ce26-4575-9c48-1726b47c64fa.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjA2MzA3LTM5NDBkZTMzLWNlMjYtNDU3NS05YzQ4LTE3MjZiNDdjNjRmYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMTUxZWVmNzM5MmMzMjE4OWJmZmI5OWJkNGU4NzE5YmExMDc5NWNiMmYwNGM1ZWVmYTM2MWE2M2YxNDc2YmE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.n8nkzSE6f_PIsiveGVb3R1Y0X_WnQQwlVSoIwrCsBTc)
+
+## 5. Mock logging in
+
+Creating a user login system is outside the scope of this project. To emulate a similar behavior, copy the following user table in `5-app.py`.
+
+    users = {
+        1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
+        2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
+        3: {"name": "Spock", "locale": "kg", "timezone": "Vulcan"},
+        4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
+    }
+
+This will mock a database user table. Logging in will be mocked by passing `login_as` URL parameter containing the user ID to log in as.
+
+Define a `get_user` function that returns a user dictionary or `None` if the ID cannot be found or if `login_as` was not passed.
+
+Define a `before_request` function and use the `app.before_request` decorator to make it be executed before all other functions. `before_request` should use `get_user `to find a user if any, and set it as a global on `flask.g.user`.
+
+In your HTML template, if a user is logged in, in a paragraph tag, display a welcome message otherwise display a default message as shown in the table below.
+
+| msgid        | English                                     | French                                    |
+|--------------|---------------------------------------------|-------------------------------------------|
+| logged_in_as | "You are logged in as %(username)s."        | "Vous êtes connecté en tant que %(username)s." |
+| not_logged_in| "You are not logged in."                    | "Vous n'êtes pas connecté."               |
+
+Visiting `http://127.0.0.1:5000/` in your browser should display this:
+
+![WORLD](https://private-user-images.githubusercontent.com/125453474/302607411-6df1964e-0124-4071-b720-75f3505b0780.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjA3NDExLTZkZjE5NjRlLTAxMjQtNDA3MS1iNzIwLTc1ZjM1MDViMDc4MC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lYWQzZmM5MzI5OWEyMjVhNzAxOWZjY2I5YzQyZWVlM2M0OWY1YjdkYzBhZGM2NmFlZTEwZmZhM2I3Y2NjMzRhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.FsDiRXTF6KY26ZEABj6OFaMCHygPZDXMpYp5oMg7EiE)
+
+Visiting `http://127.0.0.1:5000/?login_as=2` in your browser should display this:
+
+![HELLO](https://private-user-images.githubusercontent.com/125453474/302607652-90f601c3-2113-4992-be40-b6d21d4846f7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjIzMjQ5MDMsIm5iZiI6MTcyMjMyNDYwMywicGF0aCI6Ii8xMjU0NTM0NzQvMzAyNjA3NjUyLTkwZjYwMWMzLTIxMTMtNDk5Mi1iZTQwLWI2ZDIxZDQ4NDZmNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNzMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDczMFQwNzMwMDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYjUwNzFhOTc3NDNjZDZlZmViN2VlZmNmNWY4MTVmMTBkOGU0YjhlMjk3MTk0NDQzMDVhNjFjOTc3MDA3ZjdmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.bPFSL9sxRHaaI7S2-OX3JF71Bo3YSv2G_vfRlY6MwRI)
 
